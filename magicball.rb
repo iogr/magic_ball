@@ -14,6 +14,9 @@ greetings = [
 #Считываем responses.txt - файл с ответами
 answers = File.readlines("#{__dir__}/responses.txt", chomp: true)
 
+#Удаляем пустые строки
+answers.delete_if { |h| h == "" }
+
 #Проводим череду нехитрых действий
 puts `clear`
 puts greetings.sample
